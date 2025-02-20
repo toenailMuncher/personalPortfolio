@@ -51,3 +51,26 @@ function toggleMenu() {
       icon.src = icon.getAttribute("src-light");
     });
   }
+  
+  // Typing effect with random letters
+  function typeEffect(element, text, delay = 100) {
+    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    let i = 0;
+    function type() {
+      if (i < text.length) {
+        element.innerHTML = text.substring(0, i) + characters.charAt(Math.floor(Math.random() * characters.length));
+        i++;
+        setTimeout(type, delay);
+      } else {
+        element.innerHTML = text;
+      }
+    }
+    element.innerHTML = "";
+    type();
+  }
+  
+  document.addEventListener("DOMContentLoaded", () => {
+    typeEffect(document.getElementById("hello-text"), "Hello, I'm");
+    typeEffect(document.getElementById("name-text"), "Marcus Chuong", 150);
+    typeEffect(document.getElementById("role-text"), "Fullstack Developer", 200);
+  });
