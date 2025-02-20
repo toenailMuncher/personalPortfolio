@@ -2,116 +2,24 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Your Name - Web Developer</title>
-  <!-- Google Fonts for typography -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link 
-    href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Lato:wght@300;400;700&display=swap" 
-    rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Portfolio</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <!-- Header Section -->
-  <header class="fade-in">
-    <div class="header-content">
-      <h1>Marcus Chuong</h1>
-      <p>Toronto-based Fullstack Developer</p>
-    </div>
-    <!-- Mobile Navigation Toggle -->
-    <button id="nav-toggle" aria-label="Toggle Navigation">&#9776;</button>
+  <header class="hero">
+    <h1>Your Name</h1>
+    <p>Your City-based Web Developer</p>
   </header>
 
-  <!-- Navigation -->
-  <nav id="nav-menu">
-    <ul>
-      <li><a href="#about">About</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#testimonials">Testimonials</a></li>
-      <li><a href="#blog">Blog</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
+  <!-- Navigation (links to separate pages) -->
+  <nav class="nav-links">
+    <!-- If you have URL rewriting set up on Netlify/Vercel, 
+         you can link to /aboutme, /portfolio, /contact 
+         instead of aboutme.html, etc. -->
+    <a href="aboutme.html">About Me</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="contact.html">Contact</a>
   </nav>
-
-  <!-- Main Content -->
-  <main>
-    <!-- About Section -->
-    <section id="about" class="fade-in">
-      <h2>About Me</h2>
-      <p>Write a brief introduction about who you are, your background, and your passion for web development.</p>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="fade-in">
-      <h2>Projects</h2>
-      <article class="project">
-        <h3>Project Title 1</h3>
-        <p>A short description of the project.</p>
-        <a href="https://example.com" target="_blank">View Project</a>
-      </article>
-      <article class="project">
-        <h3>Project Title 2</h3>
-        <p>A short description of the project.</p>
-        <a href="https://example.com" target="_blank">View Project</a>
-      </article>
-      <!-- Add more projects as needed -->
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="fade-in">
-      <h2>Skills</h2>
-      <ul class="skills-list">
-        <li>HTML5 & CSS3</li>
-        <li>JavaScript (ES6+)</li>
-        <li>React / Vue</li>
-        <li>Responsive Design</li>
-        <li>UX/UI Design</li>
-        <!-- Add additional skills -->
-      </ul>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section id="testimonials" class="fade-in">
-      <h2>Testimonials</h2>
-      <blockquote>
-        <p>"An amazing developer who delivers great results on time!"</p>
-        <footer>- Client Name</footer>
-      </blockquote>
-      <blockquote>
-        <p>"Innovative and dedicated. A pleasure to work with."</p>
-        <footer>- Another Client</footer>
-      </blockquote>
-    </section>
-
-    <!-- Blog Section -->
-    <section id="blog" class="fade-in">
-      <h2>Blog</h2>
-      <article class="blog-post">
-        <h3>Blog Post Title 1</h3>
-        <p>A short preview of the blog post content...</p>
-        <a href="#" target="_blank">Read More</a>
-      </article>
-      <article class="blog-post">
-        <h3>Blog Post Title 2</h3>
-        <p>A short preview of the blog post content...</p>
-        <a href="#" target="_blank">Read More</a>
-      </article>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="fade-in">
-      <h2>Contact</h2>
-      <p>Feel free to reach out via email at <a href="mailto:youremail@example.com">youremail@example.com</a>.</p>
-    </section>
-  </main>
-
-  <!-- Footer -->
-  <footer class="fade-in">
-    <p>&copy; 2025 Your Name</p>
-  </footer>
-
-  <script src="scripts.js"></script>
 </body>
 </html>
