@@ -15,6 +15,7 @@
   --button-border: rgb(53, 53, 53) 0.1rem solid;
   --button-border-2: rgb(255, 255, 255) 0.1rem solid;
   --container-border: rgb(163, 163, 163);
+  --transition-duration: 0.3s;
 }
 
 /* Dark Mode */
@@ -44,6 +45,7 @@ h3 {
 body {
   font-family: "Poppins", sans-serif;
   background-color: var(--background-color);
+  transition: background-color var(--transition-duration), color var(--transition-duration);
 }
 
 html {
@@ -59,6 +61,18 @@ p {
 a,
 .btn {
   transition: all 300ms ease;
+}
+
+nav,
+.menu-links,
+.details-container,
+.color-container,
+.contact-info-upper-container {
+  transition: background-color var(--transition-duration), color var(--transition-duration), border-color var(--transition-duration);
+}
+
+.icon {
+  transition: filter var(--transition-duration);
 }
 
 /* DESKTOP NAV */
