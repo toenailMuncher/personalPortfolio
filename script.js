@@ -53,14 +53,24 @@ function toggleMenu() {
   }
   
   // Typing effect with random letters
-  function typeEffect(element, text, delay = 100) {
+  function typeEffect(element, text, delay = 50, cycleDelay = 20, cycles = 5) {
     const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
     let i = 0;
     function type() {
       if (i < text.length) {
-        element.innerHTML = text.substring(0, i) + characters.charAt(Math.floor(Math.random() * characters.length));
-        i++;
-        setTimeout(type, delay);
+        let cycleCount = 0;
+        function cycle() {
+          if (cycleCount < cycles) {
+            element.innerHTML = text.substring(0, i) + characters.charAt(Math.floor(Math.random() * characters.length));
+            cycleCount++;
+            setTimeout(cycle, cycleDelay);
+          } else {
+            element.innerHTML = text.substring(0, i + 1);
+            i++;
+            setTimeout(type, delay);
+          }
+        }
+        cycle();
       } else {
         element.innerHTML = text;
       }
@@ -70,7 +80,30 @@ function toggleMenu() {
   }
   
   document.addEventListener("DOMContentLoaded", () => {
-    typeEffect(document.getElementById("hello-text"), "Hello, I'm");
-    typeEffect(document.getElementById("name-text"), "Marcus Chuong", 150);
-    typeEffect(document.getElementById("role-text"), "Fullstack Developer", 200);
+    typeEffect(document.getElementById("hello-text"), "Hello, I'm", 50, 20, 10);
+    typeEffect(document.getElementById("name-text"), "Marcus Chuong", 75, 20, 10);
+    typeEffect(document.getElementById("role-text"), "Fullstack Developer", 100, 20, 10);
+  
+    // Fade-in and slide-in effect on scroll
+    const faders = document.querySelectorAll('.fade-in-section');
+  
+    const appearOptions = {
+      threshold: 0.1,
+      rootMargin: "0px 0px -50px 0px"
+    };
+  
+    const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) {
+          return;
+        } else {
+          entry.target.classList.add('is-visible');
+          appearOnScroll.unobserve(entry.target);
+        }
+      });
+    }, appearOptions);
+  
+    faders.forEach(fader => {
+      appearOnScroll.observe(fader);
+    });
   });
