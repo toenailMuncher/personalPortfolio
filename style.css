@@ -1,35 +1,24 @@
+/* filepath: /C:/Users/marcu/Documents/GitHub/personalPortfolio/style.css */
 /* GENERAL */
 
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
 
-/* Default Light Mode */
 :root {
-  --primary-color: white;
-  --primary-color-2: rgb(250, 250, 250);
-  --primary-color-3: rgb(181, 181, 181);
-  --background-color: rgb(255, 255, 255);
-  --secondary-color: black;
-  --secondary-color-2: rgb(85, 85, 85);
-  --button-background: rgb(53, 53, 53);
-  --button-text-hover: grey;
-  --button-border: rgb(53, 53, 53) 0.1rem solid;
-  --button-border-2: rgb(255, 255, 255) 0.1rem solid;
-  --container-border: rgb(163, 163, 163);
+  --background-color: #ffffff;
+  --text-color: #000000;
+  --nav-background-color: #f8f9fa;
+  --nav-text-color: #000000;
+  --button-background-color: #007bff;
+  --button-text-color: #ffffff;
 }
 
-/* Dark Mode */
-[theme="dark"] {
-  --primary-color: black;
-  --primary-color-2: rgb(39, 39, 39);
-  --primary-color-3: rgb(74, 74, 74);
-  --background-color: rgb(33, 33, 33);
-  --secondary-color: white;
-  --secondary-color-2: rgb(170, 170, 170);
-  --button-background: rgb(202, 202, 202);
-  --button-text-hover: lightgrey;
-  --button-border: rgb(202, 202, 202) 0.1rem solid;
-  --button-border-2: rgb(0, 0, 0) 0.1rem solid;
-  --container-border: rgb(92, 92, 92);
+[data-theme="dark"] {
+  --background-color: #121212;
+  --text-color: #ffffff;
+  --nav-background-color: #333333;
+  --nav-text-color: #ffffff;
+  --button-background-color: #1a73e8;
+  --button-text-color: #ffffff;
 }
 
 * {
@@ -37,13 +26,10 @@
   padding: 0;
 }
 
-h3 {
-  color: var(--secondary-color);
-}
-
 body {
   font-family: "Poppins", sans-serif;
   background-color: var(--background-color);
+  color: var(--text-color);
 }
 
 html {
@@ -51,7 +37,7 @@ html {
 }
 
 p {
-  color: var(--secondary-color-2);
+  color: rgb(85, 85, 85);
 }
 
 /* TRANSITION */
@@ -66,12 +52,14 @@ a,
 nav,
 .nav-links {
   display: flex;
-  align-items: center;
 }
 
 nav {
   justify-content: space-around;
+  align-items: center;
   height: 17vh;
+  background-color: var(--nav-background-color);
+  color: var(--nav-text-color);
 }
 
 .nav-links {
@@ -80,33 +68,21 @@ nav {
   font-size: 1.5rem;
 }
 
-nav li:last-child {
-  width: max-content;
-  display: flex;
-  margin: auto;
-  padding: 10px;
-}
-
 a {
-  color: var(--secondary-color);
+  color: var(--text-color);
   text-decoration: none;
-  text-decoration-color: var(--primary-color);
+  text-decoration-color: white;
 }
 
 a:hover {
+  color: grey;
   text-decoration: underline;
   text-underline-offset: 1rem;
-  text-decoration-color: var(--secondary-color);
-}
-
-nav a:hover {
-  color: var(--secondary-color);
-  text-decoration-color: var(--secondary-color);
+  text-decoration-color: rgb(181, 181, 181);
 }
 
 .logo {
   font-size: 2rem;
-  color: var(--secondary-color);
 }
 
 .logo:hover {
@@ -136,7 +112,7 @@ nav a:hover {
 .hamburger-icon span {
   width: 100%;
   height: 2px;
-  background-color: var(--secondary-color);
+  background-color: var(--text-color);
   transition: all 0.3 ease-in-out;
 }
 
@@ -144,7 +120,7 @@ nav a:hover {
   position: absolute;
   top: 100%;
   right: 0;
-  background-color: var(--primary-color);
+  background-color: var(--background-color);
   width: fit-content;
   max-height: 0;
   overflow: hidden;
@@ -156,7 +132,7 @@ nav a:hover {
   padding: 10px;
   text-align: center;
   font-size: 1.5rem;
-  color: var(--secondary-color);
+  color: var(--text-color);
   text-decoration: none;
   transition: all 0.3 ease-in-out;
 }
@@ -242,7 +218,6 @@ section {
 }
 
 .title {
-  color: var(--secondary-color);
   font-size: 3rem;
   text-align: center;
 }
@@ -275,12 +250,13 @@ section {
   padding: 1rem;
   width: 8rem;
   border-radius: 2rem;
+  background-color: var(--button-background-color);
+  color: var(--button-text-color);
 }
 
 .btn-color-1,
 .btn-color-2 {
-  border: var(--button-border);
-  color: var(--secondary-color-2);
+  border: rgb(53, 53, 53) 0.1rem solid;
 }
 
 .btn-color-1:hover,
@@ -290,12 +266,12 @@ section {
 
 .btn-color-1,
 .btn-color-2:hover {
-  background: var(--button-background);
-  color: var(--primary-color);
+  background: rgb(53, 53, 53);
+  color: white;
 }
 
 .btn-color-1:hover {
-  background: var(--secondary-color);
+  background: rgb(0, 0, 0);
 }
 
 .btn-color-2 {
@@ -303,8 +279,7 @@ section {
 }
 
 .btn-color-2:hover {
-  border: var(--button-border);
-  background: var(--secondary-color);
+  border: rgb(255, 255, 255) 0.1rem solid;
 }
 
 .btn-container {
@@ -346,10 +321,10 @@ section {
 .details-container {
   padding: 1.5rem;
   flex: 1;
-  background: var(--primary-color-2);
+  background: var(--background-color);
   border-radius: 2rem;
-  border: var(--button-border);
-  border-color: var(--container-border);
+  border: rgb(53, 53, 53) 0.1rem solid;
+  border-color: rgb(163, 163, 163);
   text-align: center;
 }
 
@@ -371,7 +346,7 @@ section {
 }
 
 .experience-sub-title {
-  color: var(--secondary-color);
+  color: rgb(85, 85, 85);
   font-weight: 600;
   font-size: 1.75rem;
   margin-bottom: 2rem;
@@ -410,8 +385,8 @@ article .icon {
 }
 
 .color-container {
-  border-color: var(--container-border);
-  background: var(--primary-color-2);
+  border-color: rgb(163, 163, 163);
+  background: rgb(250, 250, 250);
 }
 
 .project-img {
@@ -422,12 +397,12 @@ article .icon {
 
 .project-title {
   margin: 1rem;
-  color: var(--secondary-color);
+  color: var(--text-color);
 }
 
 .project-btn {
-  color: var(--secondary-color);
-  border-color: var(--container-border);
+  color: var(--text-color);
+  border-color: rgb(163, 163, 163);
 }
 
 /* CONTACT */
@@ -443,9 +418,9 @@ article .icon {
   display: flex;
   justify-content: center;
   border-radius: 2rem;
-  border: var(--button-border);
-  border-color: var(--container-border);
-  background: var(--background-color);
+  border: rgb(53, 53, 53) 0.1rem solid;
+  border-color: rgb(163, 163, 163);
+  background: (250, 250, 250);
   margin: 2rem auto;
   padding: 0.5rem;
 }
