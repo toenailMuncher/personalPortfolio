@@ -24,6 +24,7 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 body {
@@ -37,7 +38,7 @@ html {
 }
 
 p {
-  color: rgb(85, 85, 85);
+  color: var(--text-color);
 }
 
 /* TRANSITION */
